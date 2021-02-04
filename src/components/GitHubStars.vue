@@ -5,7 +5,8 @@
     data-icon="octicon-star"
     :href="pkg.repository.url"
     :aria-label="`Star ${pkg.author}/${pkg.name} on GitHub`"
-  >Star</v-github-button>
+    >Star
+  </v-github-button>
 </template>
 
 <script>
@@ -15,12 +16,12 @@ export default {
   props: {
     pkg: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   components: {
-    VGithubButton
-  }
+    VGithubButton,
+  },
 }
 </script>
 

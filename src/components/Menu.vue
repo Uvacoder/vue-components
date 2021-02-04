@@ -11,10 +11,20 @@
     <ul
       ref="menu"
       :style="inlineMenuStyle"
-      :class="['menu', { 'is-open': classes['is-open'] }]"
+      :class="['menu', menuClass, { 'is-open': classes['is-open'] }]"
     >
+      <li>
+        <slot name="before"></slot>
+      </li>
       <template v-for="(route, index) in flatRoutes">
-        <li :key="index" v-if="route.name && route.name !== route.parentName">
+        <li
+          :key="index"
+          :class="{
+            'is-selected': route.path === currRoute.path,
+            'is-child-item': route.nested && route.path !== route.parent.path,
+          }"
+          v-if="route.name"
+        >
           <router-link :to="{ name: route.name }">
             {{ route.name }}
           </router-link>
@@ -51,23 +61,41 @@ export default {
   props: {
     routes: {
       type: Array,
-      default: () => []
+      default: () => [],
     },
     exclude: {
       type: Array,
-      default: () => []
+      default: () => [],
+    },
+    menuClass: {
+      type: String,
     },
     tokenStyle: {
       type: Object,
-      default: () => ({})
+      default: () => ({}),
     },
     menuStyle: {
       type: Object,
-      default: () => ({})
-    }
+      default: () => ({}),
+    },
   },
-  components: { VWrapNode },
-  data: () => ({ open: false }),
+  components: {
+    VWrapNode,
+  },
+  data: () => ({
+    open: false,
+    currRoute: null,
+  }),
+  // https://stackoverflow.com/questions/46402809/vuejs-event-on-route-change
+  watch: {
+    $route: {
+      handler(to) {
+        this.currRoute = to
+      },
+      deep: true,
+      immediate: true,
+    },
+  },
   mounted() {
     document.addEventListener('click', this.dismiss)
     window.addEventListener('resize', this.handleResize)
@@ -79,7 +107,7 @@ export default {
   computed: {
     classes() {
       return {
-        'is-open': this.open
+        'is-open': this.open,
       }
     },
     flatRoutes() {
@@ -91,15 +119,12 @@ export default {
       return {
         // <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 196.32 170.02"><defs><style>.cls-1{fill:#42b883;}.cls-2{fill:#35495e;}</style></defs><title>logo</title><polygon class="cls-1" points="120.83 0 98.16 39.26 75.49 0 0 0 98.16 170.02 196.32 0 120.83 0"/><polygon class="cls-2" points="120.83 0 98.16 39.26 75.49 0 39.26 0 98.16 102.01 157.06 0 120.83 0"/></svg>
         backgroundImage: `url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTYuMzIgMTcwLjAyIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzQyYjg4Mzt9LmNscy0ye2ZpbGw6IzM1NDk1ZTt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmxvZ288L3RpdGxlPjxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIxMjAuODMgMCA5OC4xNiAzOS4yNiA3NS40OSAwIDAgMCA5OC4xNiAxNzAuMDIgMTk2LjMyIDAgMTIwLjgzIDAiLz48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMTIwLjgzIDAgOTguMTYgMzkuMjYgNzUuNDkgMCAzOS4yNiAwIDk4LjE2IDEwMi4wMSAxNTcuMDYgMCAxMjAuODMgMCIvPjwvc3ZnPg==)`,
-        ...this.tokenStyle
+        ...this.tokenStyle,
       }
     },
     inlineMenuStyle() {
-      return {
-        backgroundColor: '#1c284c',
-        ...this.menuStyle
-      }
-    }
+      return this.menuStyle
+    },
   },
   methods: {
     toggle(state) {
@@ -124,8 +149,8 @@ export default {
           resolve(this.$refs.menu.getBoundingClientRect().width)
         })
       })
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -206,6 +231,20 @@ export default {
   }
 }
 
+.is-child-item {
+  padding-left: 1rem;
+}
+
+.is-selected {
+  &::before {
+    content: '';
+    width: 0.01rem;
+    display: block;
+    margin-right: 1rem;
+    background-color: #8b9dc3;
+  }
+}
+
 .clearfix {
   &::after,
   &::before {
@@ -229,7 +268,7 @@ li:not(:empty) {
   display: flex;
   margin: 0.5rem 1rem;
   padding-bottom: 1rem;
-  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.05);
+  border-bottom: 0.01rem solid rgba(255, 255, 255, 0.05);
 
   &:first-child {
     margin-top: 1rem;

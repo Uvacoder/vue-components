@@ -12,9 +12,9 @@ import VContainer from '@/components/Container'
 export default {
   components: {
     VContainer,
-    VBreakpoint
+    VBreakpoint,
   },
-  data: () => ({ breakpoint: {} })
+  data: () => ({ breakpoint: {} }),
 }
 </script>
 
@@ -25,7 +25,7 @@ export default {
 .page {
   @extend .container;
   min-height: 100vh;
-  padding-top: 4rem;
+  padding-top: 8rem;
   padding-bottom: 4rem;
 }
 </style>

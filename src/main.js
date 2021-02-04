@@ -1,12 +1,12 @@
-import * as components from './export/components'
+import * as Components from './export/components'
 
 export { getNavHeight } from './components/Nav'
 export { default as ScrollToAnchor } from './components/ScrollToAnchor'
 
 const Plugin = {
   install(Vue) {
-    Object.keys(components).forEach(key => Vue.component(key, components[key]))
-  }
+    Object.keys(Components).forEach(key => Vue.component(key, Components[key]))
+  },
 }
 
 function autoInstall() {

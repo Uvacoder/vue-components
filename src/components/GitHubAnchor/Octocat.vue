@@ -4,7 +4,7 @@
   <!-- https://commons.wikimedia.org/wiki/File:Octicons-mark-github.svg -->
   <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
     <path
-      fill="#273769"
+      fill="#1a2547"
       fill-rule="evenodd"
       clip-rule="evenodd"
       transform="scale(64)"

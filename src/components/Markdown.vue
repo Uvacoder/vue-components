@@ -8,12 +8,12 @@ import Prism from 'prismjs'
 export default {
   props: {
     markdown: {
-      type: String
-    }
+      type: String,
+    },
   },
   mounted() {
     setTimeout(Prism.highlightAll)
-  }
+  },
 }
 </script>
 
@@ -156,8 +156,19 @@ export default {
   h5,
   h6 {
     a {
+      position: relative;
+
       &::before {
         content: '⚡️ ';
+        left: 0;
+        opacity: 0.5;
+        position: absolute;
+        transform: translateX(calc(-100% - 0.25ch));
+        transition: opacity var(--common-transition-time);
+      }
+
+      &:hover::before {
+        opacity: 1;
       }
     }
   }

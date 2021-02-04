@@ -22,7 +22,7 @@ export const VNavProvider = {
   },
   render() {
     return this.$scopedSlots.default?.(this.context)
-  }
+  },
 }
 
 export default {
@@ -31,7 +31,7 @@ export default {
     const isSticky = computed(() => scrollYPosition.value > 0)
     provide(NavSymbol, { isSticky })
     return { isSticky }
-  }
+  },
 }
 </script>
 
@@ -44,6 +44,7 @@ export default {
   padding: 1rem;
   position: absolute;
   align-items: center;
+  background-color: #0d1223;
   transition: padding var(--common-transition-time),
     background-color var(--common-transition-time);
 
