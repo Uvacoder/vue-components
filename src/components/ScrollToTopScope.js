@@ -26,5 +26,5 @@ export default {
   render() {
     const { isScrollEndRef: isScrollEnd, scrollToTop } = this
     return this.$scopedSlots.default?.({ isScrollEnd, scrollToTop })
-  }
+  },
 }

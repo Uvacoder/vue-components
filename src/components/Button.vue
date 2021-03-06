@@ -14,15 +14,15 @@ export default {
   props: {
     isIcon: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   data: () => ({ active: false }),
   methods: {
     toggleActive() {
       this.active = !this.active
-    }
-  }
+    },
+  },
 }
 </script>
 

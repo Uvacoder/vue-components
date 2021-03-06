@@ -29,16 +29,16 @@ export default {
   props: {
     pkg: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   components: {
     VHideAt,
     VDownloads,
     VNavProvider,
     VGithubStars,
-    VGithubAnchor
-  }
+    VGithubAnchor,
+  },
 }
 </script>
 

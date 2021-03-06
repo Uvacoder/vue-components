@@ -8,7 +8,7 @@
 import Anchor from './Anchor'
 
 export default {
-  components: { Anchor }
+  components: { Anchor },
 }
 </script>
 

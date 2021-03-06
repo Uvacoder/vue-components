@@ -20,7 +20,7 @@
 import VContainer from '@/components/Container'
 
 export default {
-  components: { VContainer }
+  components: { VContainer },
 }
 </script>
 

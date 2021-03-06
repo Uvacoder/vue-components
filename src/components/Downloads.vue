@@ -9,14 +9,14 @@ export default {
   props: {
     pkg: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     src() {
       return `https://img.shields.io/npm/dt/${this.pkg.name}?style=social`
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -18,7 +18,7 @@ function scrollTo(offset, callback = () => {}) {
   onScroll()
   window.scrollTo({
     top: offset,
-    behavior: 'smooth'
+    behavior: 'smooth',
   })
 }
 
@@ -58,11 +58,11 @@ const ScrollToAnchor = (router, { offsetY = async () => 0 } = {}) => {
           await this.$nextTick()
           scrollToAnchor(anchorId, offsetY)
         }
-      }
+      },
     },
     render() {
       return null
-    }
+    },
   }
   return ScrollToAnchor.Component
 }

@@ -2,20 +2,20 @@ export default {
   props: {
     value: {
       type: [Object, Array],
-      required: true
+      required: true,
     },
     tag: {
       type: String,
-      default: 'div'
+      default: 'div',
     },
     options: {
       type: Object,
-      default: () => {}
-    }
+      default: () => {},
+    },
   },
   render(h) {
     let nodes = this.value
     if (!Array.isArray(nodes)) nodes = [nodes]
     return h(this.tag, this.options, nodes)
-  }
+  },
 }

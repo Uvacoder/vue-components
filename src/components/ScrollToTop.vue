@@ -5,7 +5,9 @@
       class="scroll-to-top"
       @click="scope.scrollToTop"
       :class="{ 'is-visible': scope.isScrollEnd }"
-    >👆</div>
+    >
+      👆
+    </div>
   </ScrollToTopScope>
 </template>
 
@@ -13,7 +15,7 @@
 import ScrollToTopScope from './ScrollToTopScope'
 
 export default {
-  components: { ScrollToTopScope }
+  components: { ScrollToTopScope },
 }
 </script>
 

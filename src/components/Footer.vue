@@ -17,13 +17,13 @@ export default {
   props: {
     pkg: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   components: {
     Heart,
-    Container
-  }
+    Container,
+  },
 }
 </script>
 

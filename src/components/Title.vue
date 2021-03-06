@@ -10,13 +10,13 @@ export default {
   props: {
     pkg: {
       type: Object,
-      required: true
+      required: true,
     },
     docsPkg: {
       type: Object,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>
 

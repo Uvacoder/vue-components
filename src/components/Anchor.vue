@@ -19,46 +19,46 @@ export default {
   props: {
     name: {
       type: String,
-      default: ''
+      default: '',
     },
     href: {
       type: String,
-      default: ''
+      default: '',
     },
     tabindex: {
       type: String,
-      default: ''
+      default: '',
     },
     refs: {
       type: Object,
-      default: () => ({})
+      default: () => ({}),
     },
     to: {
       type: [String, Element, Object],
-      default: ''
+      default: '',
     },
     target: {
       type: String,
-      default: '_blank'
+      default: '_blank',
     },
     prevent: {
       type: Boolean,
-      default: false
+      default: false,
     },
     static: {
       type: Boolean,
-      default: false
+      default: false,
     },
     offsetY: {
       type: Function,
-      default: getNavHeight
-    }
+      default: getNavHeight,
+    },
   },
   computed: {
     computedTarget() {
       if (this.to) return undefined
       return this.target
-    }
+    },
   },
   methods: {
     handleClick(event) {
@@ -96,7 +96,7 @@ export default {
       return new Promise(resolve =>
         window.requestAnimationFrame(() => resolve(callback()))
       )
-    }
-  }
+    },
+  },
 }
 </script>

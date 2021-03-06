@@ -1,6 +1,6 @@
-import * as Components from './export/components'
+import * as Components from './export'
 
-export { getNavHeight } from './components/Nav'
+export { getNavHeight } from './components/Nav.vue'
 export { default as ScrollToAnchor } from './components/ScrollToAnchor'
 
 const Plugin = {

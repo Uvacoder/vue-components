@@ -13,7 +13,7 @@ import VBreakpoint from 'vue-breakpoint-component'
 
 export default {
   components: { VBreakpoint },
-  data: () => ({ breakpoint: {} })
+  data: () => ({ breakpoint: {} }),
 }
 </script>
 

@@ -9,6 +9,7 @@ import { useWindowScrollPosition } from 'vue-use-web'
 import { inject, provide, computed } from '@vue/composition-api'
 
 export const NavSymbol = Symbol()
+
 export const getNavHeight = () =>
   document
     .getElementsByTagName('nav')[0]

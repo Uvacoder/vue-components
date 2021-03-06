@@ -22,12 +22,12 @@ export default {
   props: {
     pkg: {
       type: Object,
-      required: true
+      required: true,
     },
     size: {
       type: String,
-      default: '2rem'
-    }
+      default: '2rem',
+    },
   },
   components: { VA, VOctocat },
   data: () => ({ nyantocat }),
@@ -35,10 +35,10 @@ export default {
     style() {
       return {
         width: this.size,
-        height: this.size
+        height: this.size,
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
