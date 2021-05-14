@@ -155,20 +155,19 @@ export default {
   h4,
   h5,
   h6 {
-    a {
-      position: relative;
-
-      &::before {
-        content: '⚡️ ';
-        left: 0;
-        opacity: 0.5;
-        position: absolute;
-        transform: translateX(calc(-100% - 0.25ch));
-        transition: opacity var(--common-transition-time);
+    &:hover {
+      a {
+        &::before {
+          opacity: 1;
+        }
       }
+    }
 
-      &:hover::before {
-        opacity: 1;
+    a {
+      &::before {
+        content: '#';
+        margin-right: 0.5rem;
+        transition: opacity var(--common-transition-duration);
       }
     }
   }
