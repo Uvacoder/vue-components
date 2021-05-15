@@ -12,7 +12,7 @@ export default {
       new Promise(resolve =>
         window.requestAnimationFrame(() =>
           resolve(
-            scrollYPosition.value >=
+            window.innerHeight + scrollYPosition.value >=
               document.body.scrollHeight * SCROLL_HEIGHT_SCALE
           )
         )

@@ -41,7 +41,7 @@ export default {
     min-width: 8rem;
     position: relative;
     text-decoration: none;
-    transition: color var(--common-transition-time);
+    transition: color var(--transition-duration);
 
     &:not(:first-child) {
       margin-left: 0.5rem;
@@ -62,7 +62,7 @@ export default {
       width: 100%;
       position: absolute;
       background-color: #8b9dc3;
-      transition: background-color var(--common-transition-time);
+      transition: background-color var(--transition-duration);
     }
   }
 }

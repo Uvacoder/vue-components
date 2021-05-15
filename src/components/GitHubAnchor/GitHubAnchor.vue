@@ -45,8 +45,8 @@ export default {
 <style lang="scss" scoped>
 .github-anchor {
   position: relative;
-  transition: width var(--common-transition-time),
-    height var(--common-transition-time);
+  transition: width var(--transition-duration),
+    height var(--transition-duration);
 
   &:hover {
     .nyantocat {
@@ -66,7 +66,7 @@ export default {
     position: absolute;
     border-radius: 50%;
     background-size: 100%;
-    transition: opacity var(--common-transition-time);
+    transition: opacity var(--transition-duration);
   }
 }
 </style>

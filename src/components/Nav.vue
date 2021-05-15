@@ -46,8 +46,8 @@ export default {
   position: absolute;
   align-items: center;
   background-color: #0d1223;
-  transition: padding var(--common-transition-time),
-    background-color var(--common-transition-time);
+  transition: padding var(--transition-duration),
+    background-color var(--transition-duration);
 
   &.is-sticky {
     position: fixed;

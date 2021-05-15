@@ -6,7 +6,7 @@
       @click="scope.scrollToTop"
       :class="{ 'is-visible': scope.isScrollEnd }"
     >
-      👆
+      ↑
     </div>
   </ScrollToTopScope>
 </template>
@@ -21,31 +21,30 @@ export default {
 
 <style lang="scss" scoped>
 .scroll-to-top {
-  right: 0;
-  bottom: 0;
   opacity: 0;
   z-index: 1;
-  margin: 1rem;
-  cursor: default;
+  bottom: 2rem;
+  right: 1.5rem;
   position: fixed;
-  color: #8b9dc3;
   line-height: normal;
-  border-radius: 0.25rem;
-  padding-top: 0.1rem;
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-  padding-bottom: 0.15rem;
-  background-color: lighten(#0c1121, 20%);
-  transition: color var(--transition-duration),
-    padding var(--transition-duration), opacity var(--transition-duration);
+  border-radius: 50%;
+  cursor: default;
+  font-size: 1.25rem;
+  padding: 0.5rem 0.688rem;
+  color: var(--color-body);
+  transform: translateY(16rem);
+  background-color: darken(#2f4480, 2.5%);
+  transition: background-color var(--transition-duration) ease-out,
+    opacity var(--transition-duration) ease-out,
+    transform var(--transition-duration) ease-out;
 
   &:hover {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    background-color: #5972a9;
   }
 
   &.is-visible {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 </style>

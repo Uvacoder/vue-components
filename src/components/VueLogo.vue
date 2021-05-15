@@ -43,7 +43,7 @@
 .vue-logo {
   width: 10rem;
   margin-top: -4rem;
-  transition: width var(--common-transition-time);
+  transition: width var(--transition-duration);
 
   &:hover {
     width: 10.5rem;

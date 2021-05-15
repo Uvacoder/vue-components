@@ -33,7 +33,7 @@ export default {
   border-width: 0;
   font-size: 0.825rem;
   font-family: inherit;
-  padding: 0.25rem 1rem;
+  padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
   text-transform: capitalize;
   color: white;

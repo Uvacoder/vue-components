@@ -185,8 +185,8 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 1.2rem 1.2rem;
-  transition: opacity var(--common-transition-time),
-    transform var(--common-transition-time) ease;
+  transition: opacity var(--transition-duration),
+    transform var(--transition-duration) ease;
   transform: translate(-1.4rem, 1.4rem);
 
   &:hover {
@@ -237,9 +237,10 @@ export default {
 
 .is-selected {
   &::before {
-    content: '';
-    width: 0.01rem;
     display: block;
+    content: '';
+    height: 1rem;
+    width: 0.01rem;
     margin-right: 1rem;
     background-color: #8b9dc3;
   }
@@ -253,6 +254,7 @@ export default {
     content: '\0020';
     overflow: hidden;
   }
+
   &::after {
     clear: both;
   }
@@ -266,12 +268,16 @@ ul {
 
 li:not(:empty) {
   display: flex;
-  margin: 0.5rem 1rem;
-  padding-bottom: 1rem;
+  align-items: center;
+  min-height: 4rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   border-bottom: 0.01rem solid rgba(255, 255, 255, 0.05);
 
-  &:first-child {
-    margin-top: 1rem;
+  @include media-breakpoint-down(xs) {
+    font-size: 0.875rem;
   }
 }
 

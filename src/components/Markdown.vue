@@ -82,7 +82,7 @@ export default {
     font-size: 0.6em;
     font-weight: bold;
     text-transform: uppercase;
-    transition: color var(--common-transition-time);
+    transition: color var(--transition-duration);
   }
 
   /* copy-to-clipboard */
@@ -93,7 +93,7 @@ export default {
     position: absolute;
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
-    transition: opacity var(--common-transition-time);
+    transition: opacity var(--transition-duration);
 
     @include at-root {
       .code-toolbar:hover {
@@ -112,8 +112,8 @@ export default {
       color: white;
       text-transform: uppercase;
       background-color: transparent;
-      transition: background-color var(--common-transition-time),
-        padding var(--common-transition-time);
+      transition: background-color var(--transition-duration),
+        padding var(--transition-duration);
     }
   }
 
