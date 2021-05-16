@@ -2,12 +2,13 @@ const { resolveExternals } = require('node-externals')
 
 module.exports = {
   chainWebpack: config => {
-    config.externals(resolveExternals())
+    // https://stackoverflow.com/a/45820235/4106263
+    config.externals(resolveExternals({ importType: 'umd' }))
   },
-  css: { extract: false },
   pluginOptions: {
     jestSerializer: {
       removeComments: true,
     },
   },
+  css: { extract: false },
 }
