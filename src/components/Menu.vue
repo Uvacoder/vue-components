@@ -51,7 +51,7 @@
 // https://stackoverflow.com/questions/4616694/what-is-event-bubbling-and-capturing
 // https://stackoverflow.com/questions/39589911/svg-image-not-working-in-safari-5-1-7-windows
 
-import reject from 'lodash.reject'
+import { reject } from 'lodash'
 import VWrapNode from '@/components/WrapNode'
 import flattenRoutes from '@/vue-flatten-routes'
 // import { flattenRoutes } from 'vue-flatten-routes'

@@ -1,6 +1,13 @@
+const { resolveExternals } = require('node-externals')
+
 module.exports = {
-  css: { extract: false },
   chainWebpack: config => {
-    config.externals(['@vue/composition-api'])
-  }
+    config.externals(resolveExternals())
+  },
+  css: { extract: false },
+  pluginOptions: {
+    jestSerializer: {
+      removeComments: true,
+    },
+  },
 }
