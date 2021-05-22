@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Inter:300,700&display=swap');
+
+@import './bootstrap';
+// @import '~animate.css/animate.min.css';
+
+:root {
+  --transition-duration: 0.5s;
+}
+
+html {
+  font-size: 115%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include media-breakpoint-down(xs) {
+    font-size: 100%;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li {
+  line-height: 2;
+}
+
+a {
+  transition: color var(--transition-duration);
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+p,
+ol,
+ul,
+dl {
+  margin-bottom: 2rem;
+}
